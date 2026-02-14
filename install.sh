@@ -18,6 +18,8 @@ fi
 
 cd "$DOTFILES_DIR"
 
+backups=()
+
 # 各パッケージを自動検出してstow
 for dir in */; do
   package="${dir%/}"
@@ -27,10 +29,9 @@ for dir in */; do
     rel="${file#"$DOTFILES_DIR/$package/"}"
     target="$HOME/$rel"
     if [ -e "$target" ] && [ ! -L "$target" ]; then
-      echo "Backing up $target → ${target}${BACKUP_SUFFIX}"
       mv "$target" "${target}${BACKUP_SUFFIX}"
+      backups+=("$target → ${target}${BACKUP_SUFFIX}")
     elif [ -L "$target" ]; then
-      echo "Removing existing symlink $target"
       rm "$target"
     fi
   done < <(find "$DOTFILES_DIR/$package" -type f -print0)
@@ -39,4 +40,13 @@ for dir in */; do
   stow -v -t "$HOME" "$package"
 done
 
+if [ ${#backups[@]} -gt 0 ]; then
+  echo ""
+  echo "Backed up existing files:"
+  for entry in "${backups[@]}"; do
+    echo "  $entry"
+  done
+fi
+
+echo ""
 echo "Done!"
