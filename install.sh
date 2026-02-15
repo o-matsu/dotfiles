@@ -37,7 +37,7 @@ for dir in */; do
   done < <(find "$DOTFILES_DIR/$package" -type f -print0)
 
   echo "Stowing $package..."
-  stow -v -t "$HOME" "$package"
+  stow --no-folding -v -t "$HOME" "$package"
 done
 
 if [ ${#backups[@]} -gt 0 ]; then
