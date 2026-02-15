@@ -7,15 +7,16 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.toml" },
+  --   { import = "astrocommunity.pack.lua" },
+  --   { import = "astrocommunity.pack.json" },
+  --   { import = "astrocommunity.pack.yaml" },
+  --   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.dart" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.svelte" },
-  { import = "astrocommunity.pack.tailwindcss" },
-  { import = "astrocommunity.file-explorer.yazi-nvim" }
-  -- import/override with your plugins folder
+  --   { import = "astrocommunity.pack.typescript" },
+  --   { import = "astrocommunity.pack.svelte" },
+  --   { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.file-explorer.yazi-nvim" },
+  -- { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
+  -- -- import/override with your plugins folder
+  --   { import = "astrocommunity.pack.markdown" },
 }
