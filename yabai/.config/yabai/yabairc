@@ -58,4 +58,10 @@ yabai -m rule --add app="^System Settings$"    manage=off
 yabai -m rule --add app="^Raycast$"            manage=off
 yabai -m rule --add app="^Spotify$"              manage=off
 
+# REF: https://github.com/asmvik/yabai/issues/2217
+# workaround for focus_follows_mouse randomly stopping
+yabai -m signal --add event=display_changed action="yabai -m config focus_follows_mouse autoraise"
+yabai -m signal --add event=space_changed action="yabai -m config focus_follows_mouse autoraise"
+yabai -m signal --add event=mission_control_exit action="yabai -m config focus_follows_mouse autoraise"
+
 echo "yabai configuration loaded.."
