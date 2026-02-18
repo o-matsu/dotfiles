@@ -6,6 +6,9 @@ return {
       servers = {
         dartls = { enabled = false },
       },
+      inlay_hints = {
+        enabled = false,
+      },
     },
   },
 
