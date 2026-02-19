@@ -26,8 +26,7 @@ return {
         prefix = "//",
       },
       dev_log = {
-        enabled = true,
-        open_cmd = "tabedit",
+        enabled = false,
       },
       lsp = {
         color = {
@@ -44,8 +43,9 @@ return {
       },
       debugger = {
         enabled = true,
-        run_via_dap = true,
-        exception_breakpoints = {},
+        -- TODO: DAP Consoleを消したい
+        -- run_via_dap = true,
+        -- exception_breakpoints = {},
       },
     },
     keys = {
