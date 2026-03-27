@@ -23,7 +23,7 @@ macOS ショートカットキー統一設計。Vim 風 hjkl 軸で skhd(yabai),
 ```
               j/k (要素間)         h/l (グループ間)      ,/. (上位グループ)
 OS    (alt)   ウィンドウ next/prev  スペース prev/next     —
-Terminal      ペイン next/prev     タブ prev/next         ワークスペース prev/next
+Terminal      ペイン next/prev     サーフェス prev/next    ワークスペース prev/next
 (cmd+alt)
 ```
 
@@ -43,12 +43,12 @@ alt + shift + m         Mission Control
 cmd + alt + shift + f   bsp/stack 切替
 
 ═══ ターミナル (cmux/Ghostty) ═══════════════════
-cmd + alt + j/k         ペイン next/prev
-cmd + alt + h/l         タブ prev/next
-cmd + alt + , / .       ワークスペース prev/next (cmux Settings で設定)
+cmd + alt + j/k         ペイン next/prev          [ghostty config]
+cmd + alt + h/l         サーフェス prev/next       [cmux Settings]
+cmd + alt + , / .       ワークスペース prev/next   [cmux Settings]
 cmd + d                 右に分割
 cmd + shift + d         下に分割
-cmd + t                 新規タブ
+cmd + t                 新規サーフェス
 
 ═══ アプリ切替 (Raycast Hotkey) ═════════════════
 alt + t                 cmux (Terminal)
@@ -64,7 +64,8 @@ alt + v                 Wispr Flow (音声入力)
 | ショートカット | 設定場所 | dotfiles 管理 |
 |---|---|---|
 | OS ウィンドウ操作 | `skhd/.config/skhd/skhdrc` | ○ |
-| ペイン・タブ操作 | `ghostty/.config/ghostty/config` | ○ |
+| ペイン操作 | `ghostty/.config/ghostty/config` | ○ |
+| サーフェス(タブ)切替 | cmux Settings (GUI: `cmd+,`) | × |
 | ワークスペース切替 | cmux Settings (GUI: `cmd+,`) | × |
 | アプリ切替 | Raycast Settings (GUI) | × |
 

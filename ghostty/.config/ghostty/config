@@ -68,11 +68,6 @@ clipboard-write = allow
 font-family = "Hack Nerd Font Mono"
 font-family = "Hiragino Sans W4"
 
-# === Vim-style terminal navigation (cmd+alt) ===
-# Pane: j/k = next/prev
+# === Vim-style pane navigation (cmd+alt+j/k) ===
 keybind = super+alt+j=goto_split:next
 keybind = super+alt+k=goto_split:previous
-
-# Tab: h/l = prev/next
-keybind = super+alt+h=previous_tab
-keybind = super+alt+l=next_tab
