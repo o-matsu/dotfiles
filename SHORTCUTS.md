@@ -5,7 +5,7 @@ macOS ショートカットキー統一設計。Vim 風 hjkl 軸で skhd(yabai),
 ## 設計原則
 
 1. **修飾キー = スコープ** — `alt` = OS層、`cmd+alt` = ターミナル層
-2. **キーで操作対象を区別** — `j/k` = 要素間、`h/l` = グループ間、`,/.` = 上位グループ間
+2. **キーで操作対象を区別** — `hjkl` = ペイン(4方向)、`,/.` = サーフェス、`n/p` = ワークスペース
 3. **+ shift = 変更操作**（移動/スワップ/リサイズ）、shift なし = 参照操作（フォーカス）
 4. **ctrl 回避** — MacBook 本体で押しづらいため、キーボード必須の操作には使わない
 5. **数字・括弧回避** — Cornix (48キー) でレイヤー経由になるため、頻繁な操作には使わない
@@ -21,9 +21,10 @@ macOS ショートカットキー統一設計。Vim 風 hjkl 軸で skhd(yabai),
 ## 構造の対称性
 
 ```
-              j/k (要素間)         h/l (グループ間)      ,/. (上位グループ)
-OS    (alt)   ウィンドウ next/prev  スペース prev/next     —
-Terminal      ペイン next/prev     サーフェス prev/next    ワークスペース prev/next
+              hjkl             , / .              n / p
+OS    (alt)   ウィンドウ j/k    —                  —
+              スペース h/l
+Terminal      ペイン (4方向)    サーフェス prev/next ワークスペース prev/next
 (cmd+alt)
 ```
 
@@ -43,9 +44,9 @@ alt + shift + m         Mission Control
 cmd + alt + shift + f   bsp/stack 切替
 
 ═══ ターミナル (cmux/Ghostty) ═══════════════════
-cmd + alt + j/k         ペイン next/prev          [ghostty config]
-cmd + alt + h/l         サーフェス prev/next       [cmux Settings]
-cmd + alt + , / .       ワークスペース prev/next   [cmux Settings]
+cmd + alt + hjkl        ペイン (4方向)             [ghostty config]
+cmd + alt + , / .       サーフェス prev/next       [cmux Settings]
+cmd + alt + n / p       ワークスペース prev/next   [cmux Settings]
 cmd + d                 右に分割
 cmd + shift + d         下に分割
 cmd + t                 新規サーフェス
@@ -64,9 +65,9 @@ alt + v                 Wispr Flow (音声入力)
 | ショートカット | 設定場所 | dotfiles 管理 |
 |---|---|---|
 | OS ウィンドウ操作 | `skhd/.config/skhd/skhdrc` | ○ |
-| ペイン操作 | `ghostty/.config/ghostty/config` | ○ |
-| サーフェス(タブ)切替 | cmux Settings (GUI: `cmd+,`) | × |
-| ワークスペース切替 | cmux Settings (GUI: `cmd+,`) | × |
+| ペイン操作 (cmd+alt+hjkl) | `ghostty/.config/ghostty/config` | ○ |
+| サーフェス切替 (cmd+alt+,/.) | cmux Settings (GUI: `cmd+,`) | × |
+| ワークスペース切替 (cmd+alt+n/p) | cmux Settings (GUI: `cmd+,`) | × |
 | アプリ切替 | Raycast Settings (GUI) | × |
 
 ## Cornix 親指キー推奨配置
