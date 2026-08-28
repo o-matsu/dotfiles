@@ -9,6 +9,7 @@ else
 fi
 
 yabai -m config layout "$layout"                 # 新規 Space のデフォルト
-for s in $(yabai -m query --spaces | jq '.[].index'); do
-  yabai -m space "$s" --layout "$layout"         # 既存 Space にも適用
+# 既存 Space にも適用 (macOS ネイティブのフルスクリーン Space は変更不可なので除外)
+for s in $(yabai -m query --spaces | jq '.[] | select(.["is-native-fullscreen"] | not) | .index'); do
+  yabai -m space "$s" --layout "$layout"
 done
