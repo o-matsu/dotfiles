@@ -21,8 +21,15 @@ cd "$DOTFILES_DIR"
 backups=()
 
 # 各パッケージを自動検出してstow
+# Stow 対象外のディレクトリ（$HOME に展開しないバックアップ類）
+NON_STOW_DIRS=(cornix)
+
 for dir in */; do
   package="${dir%/}"
+  if [[ " ${NON_STOW_DIRS[*]} " == *" $package "* ]]; then
+    echo "Skipping $package (not a stow package)"
+    continue
+  fi
 
   # パッケージ内のファイルを走査し、競合する既存ファイルをバックアップ
   while IFS= read -r -d '' file; do
