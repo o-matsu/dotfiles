@@ -57,4 +57,9 @@ yabai -m rule --add app="^Spotify$"            manage=off
 yabai -m rule --add app="^Spark$"              manage=off
 
 
+# 外部ディスプレイの有無でレイアウトを切り替え (1枚: float / 複数: bsp)
+yabai -m signal --add event=display_added   action="$HOME/.config/yabai/layout-by-display.sh"
+yabai -m signal --add event=display_removed action="$HOME/.config/yabai/layout-by-display.sh"
+"$HOME/.config/yabai/layout-by-display.sh"
+
 echo "yabai configuration loaded.."
