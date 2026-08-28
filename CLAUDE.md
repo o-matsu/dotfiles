@@ -25,6 +25,12 @@ mv ~/.config/foo/config.toml foo/.config/foo/
 
 ディレクトリ構造が `$HOME` からの相対パスと一致するようにする。次回 `./install.sh` で自動リンクされる。
 
+### Stow 対象外のディレクトリ
+
+install.sh はトップレベルの全ディレクトリを Stow パッケージとみなすため、`$HOME` に展開したくないディレクトリは `install.sh` の `NON_STOW_DIRS` 配列に追加してスキップさせる。
+
+- **cornix/** — Cornix キーボードの Vial キーマップバックアップ (`cornix.vil`)。Stow 対象外。
+
 ## Architecture
 
 ### Stow パッケージ構成
