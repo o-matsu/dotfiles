@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "claude-fable-5[1m]",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/cmux-notify.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/cmux-notify.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bunx -y ccstatusline@latest --hook"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bunx -y ccstatusline@latest --hook"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "caffeinate@hiropon-plugins": true,
+    "vercel@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    },
+    "hiropon-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "hiroro-work/claude-plugins"
+      }
+    },
+    "supabase-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "supabase/agent-skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "editorMode": "vim",
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(make disconnect-merged-amplify-branches:*)"
+    ]
+  }
+}

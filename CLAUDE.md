@@ -43,6 +43,7 @@ install.sh はトップレベルの全ディレクトリを Stow パッケージ
 - **lazygit** — Git TUI（delta をページャとして利用、サイドバイサイド表示）
 - **delta** — Git diff のシンタックスハイライト
 - **nvim** — Neovim エディタ設定
+- **claude** — Claude Code グローバル設定。`.claude/settings.json`（permissions/hooks/statusline/plugins 等）、`.claude/hooks/`（cmux 通知フック）、`.agents/skills/`（`npx skills add -g` でインストールしたスキル。`~/.claude/skills/*` はここへのシンボリックリンク）。`~/.claude` 配下の状態データ（projects/, plugins/, history.jsonl 等）は管理対象外。**リポジトリは公開なので、`settings.json` に `autoMode.environment` など勤務先・個人情報を含むキーを入れないこと**（プロジェクト側の `.claude/settings.local.json` に置く）。
 
 ### Neovim 設定 (AstroNvim v5)
 
