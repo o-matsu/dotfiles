@@ -68,6 +68,11 @@ clipboard-write = allow
 font-family = "Hack Nerd Font Mono"
 font-family = "Hiragino Sans W4"
 
+# cmux 0.64.22 以降は Ghostty 設定に他の項目があっても cmux 管理テーマ
+# (Apple System Colors、macOS 外観に追従) が適用され、ライトモードでは背景が白になる。
+# theme を明示すると cmux 管理テーマが無効になり、従来の Ghostty 組み込みダークパレットに戻る。
+theme = Ghostty Default Style Dark
+
 # === Vim-style pane navigation (cmd+alt+hjkl) ===
 keybind = super+alt+h=goto_split:left
 keybind = super+alt+j=goto_split:down
