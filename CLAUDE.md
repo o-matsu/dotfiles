@@ -42,6 +42,7 @@ install.sh はトップレベルの全ディレクトリを Stow パッケージ
 - **yazi** — ターミナルファイルマネージャ（Lua プラグイン: smart-enter, smart-paste, git 等）
 - **lazygit** — Git TUI（delta をページャとして利用、サイドバイサイド表示）
 - **delta** — Git diff のシンタックスハイライト
+- **cmux** — cmux ターミナルのアプリ設定（`.config/cmux/cmux.json`、JSONC）。キーボードショートカットの上書き等を管理。編集は `cmux/.config/cmux/cmux.json` を直接行い `cmux reload-config` で反映。`cmux-settings set` ヘルパーは rename 書き込みで（Settings GUI も同様の可能性あり）シンボリックリンクを実ファイルに置き換えるため、使った場合は内容をリポジトリ側へコピーし直して `stow -R cmux` で再リンクすること。ターミナル描画系の設定は ghostty パッケージ側が担当
 - **nvim** — Neovim エディタ設定
 - **claude** — Claude Code グローバル設定。`.claude/settings.json`（permissions/hooks/statusline/plugins 等）、`.claude/hooks/`（cmux 通知フック）、`.agents/skills/`（`npx skills add -g` でインストールしたスキル。`~/.claude/skills/*` はここへのシンボリックリンク）。`~/.claude` 配下の状態データ（projects/, plugins/, history.jsonl 等）は管理対象外。**リポジトリは公開なので、`settings.json` に `autoMode.environment` など勤務先・個人情報を含むキーを入れないこと**（プロジェクト側の `.claude/settings.local.json` に置く）。
 

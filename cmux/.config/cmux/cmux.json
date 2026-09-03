@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+  "shortcuts": {
+    "bindings": {
+      "newWindow": {
+        "first": {
+          "command": true,
+          "control": false,
+          "key": "n",
+          "option": false,
+          "shift": true
+        }
+      },
+      "newBrowserWorkspace": null,
+      "nextSidebarTab": "cmd+alt+n",
+      "prevSidebarTab": "cmd+alt+p",
+      "nextSurface": "cmd+alt+,",
+      "prevSurface": "cmd+alt+."
+    }
+  }
+}

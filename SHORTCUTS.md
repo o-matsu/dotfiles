@@ -45,8 +45,8 @@ cmd + alt + shift + f   bsp/stack 切替
 
 ═══ ターミナル (cmux/Ghostty) ═══════════════════
 cmd + alt + hjkl        ペイン (4方向)             [ghostty config]
-cmd + alt + , / .       サーフェス prev/next       [cmux Settings]
-cmd + alt + n / p       ワークスペース prev/next   [cmux Settings]
+cmd + alt + , / .       サーフェス prev/next       [cmux.json]
+cmd + alt + n / p       ワークスペース prev/next   [cmux.json]
 cmd + d                 右に分割
 cmd + shift + d         下に分割
 cmd + t                 新規サーフェス
@@ -66,8 +66,8 @@ alt + v                 Wispr Flow (音声入力)
 |---|---|---|
 | OS ウィンドウ操作 | `skhd/.config/skhd/skhdrc` | ○ |
 | ペイン操作 (cmd+alt+hjkl) | `ghostty/.config/ghostty/config` | ○ |
-| サーフェス切替 (cmd+alt+,/.) | cmux Settings (GUI: `cmd+,`) | × |
-| ワークスペース切替 (cmd+alt+n/p) | cmux Settings (GUI: `cmd+,`) | × |
+| サーフェス切替 (cmd+alt+,/.) | `cmux/.config/cmux/cmux.json` | ○ |
+| ワークスペース切替 (cmd+alt+n/p) | `cmux/.config/cmux/cmux.json` | ○ |
 | アプリ切替 | Raycast Settings (GUI) | × |
 
 ## Cornix 親指キー推奨配置
